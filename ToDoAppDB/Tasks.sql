@@ -1,9 +1,10 @@
 ﻿CREATE TABLE [dbo].[Tasks]
 (
 	[Id] INT NOT NULL PRIMARY KEY,
-	[TaskName] VARCHAR(50),
-	[TaskDescription] VARCHAR(50) NOT NULL,
+	[Name] NVARCHAR(50),
+	[Description] NVARCHAR(50) NOT NULL,
 	[Deadline] DATETIME, 
 	[IsDone] BIT,
-	[Category] VARCHAR(30)
+	[CategoryId] INT,
+	FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
 )
